@@ -35,6 +35,13 @@ function App() {
   console.log(result);
   setCounter(result);
   }
+  function split (){
+    var a=num1
+    var b=num2
+    result = a / b;
+  console.log(result);
+  setCounter(result);
+  }
 
   const [people, setPeople] = useState([
     {
@@ -51,8 +58,10 @@ function App() {
   const [lastName, setLastname] = useState("");
   return (
     <div className="App">
-      <div className="container">
+      <div className="container-fluid">
       <div className="row">
+        <p></p>
+        <h1 class="display-3">DWI - Tarea III - Unidad II</h1>
         <p></p>
         </div>
 
@@ -65,8 +74,7 @@ function App() {
         type="text"
         name="name"
         onChange={(event) => {
-          setName(event.target.value);
-          
+          setName(event.target.value);          
         }}
       />
       </div>
@@ -94,47 +102,93 @@ function App() {
       </div>
       </div>
       <div className="row">
-        <div className="col">
+      
+        <div className="col" >
       <ul className="list-group">
         {people.map((person, idx) => (
           <li className="list-group-item" id={idx}>{`${person.name} ${person.lastName}`}</li>
         ))}
       </ul>
         </div>
+        
+      </div>
+      <p></p><p></p><p></p><p></p>
+      <div className="row">
+      <div className="col">
+        <p></p>
+        <h1>Calculadora</h1>
+        <p></p>
+      </div>
       </div>
 
-      <p className='text-blue'>Calculadora + - X</p>
+      <div className="row">
+      <div className="col-2"></div>
+      <div className="col-4">
       <input
+        className="form-control"
         type="text"
         name="Num1"
         onChange={(event) => {
           setNum1(event.target.value);
           console.log(num1);}}
       />
+      </div>
+      <div className="col-4">
       <input
+        className="form-control"
         type="text"
         name="Num2"
         onChange={(event) => {
           setNum2(event.target.value);
         }}
       />
- 
-
-      <button 
-      onClick={()=> {
-       add();
-        }}>Sumar</button>
-        <button 
-      onClick={()=> {
-        subtract()
-        }}>Restar</button>
-          <button 
-      onClick={()=> {
-        multiply()
-        }}>Multiplicar</button>
-        
-      <h1 className='text-red'>Result: {counter}</h1>
       </div>
+      </div>
+      <p></p>
+        <div className="row">
+        <div className="col-2"></div>
+        <div className="col-2">
+          <button 
+          className="btn btn-outline-info btn-circle"
+          onClick={()=> {
+          add();
+            }}>+</button>
+        </div>
+        <div className="col-2">
+          <button
+          className="btn btn-outline-info btn-circle" 
+          onClick={()=> {
+          subtract()
+          }}>-</button>
+        </div>
+        <div className="col-2">
+          <button 
+          className="btn btn-outline-info btn-circle"
+          onClick={()=> {
+          multiply()
+          }}>x</button>
+        </div>
+        <div className="col-2">
+          <button 
+          className="btn btn-outline-info btn-circle"
+          onClick={()=> {
+          split()
+          }}>/</button>
+      </div>
+      <div className="col-2"></div>
+        </div>
+        
+        
+        <div className="row gy-5">   
+          <div className="col-2"></div>
+          <div className="col-8"> 
+          <h3>
+            = 
+            <small class="text-muted"> {counter}</small>
+          </h3>
+          </div>
+          </div>
+        </div>
          
     </div>
   );
