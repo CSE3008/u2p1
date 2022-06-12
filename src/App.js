@@ -51,7 +51,17 @@ function App() {
   const [lastName, setLastname] = useState("");
   return (
     <div className="App">
+      <div className="container">
+      <div className="row">
+        <p></p>
+        </div>
+
+      <div className="row">
+            
+        <div className="col">
       <input
+      className="form-control"
+      placeholder="First Name"
         type="text"
         name="name"
         onChange={(event) => {
@@ -59,24 +69,39 @@ function App() {
           
         }}
       />
-      <input
+      </div>
+      <div className="col">
+        <input
+        className="form-control"
+        placeholder="Last Name"
         type="text"
         name="lastName"
         onChange={(event) => {
           setLastname(event.target.value);
         }}
       />
-      <button
+      </div>
+         
+      <div className="col">
+      <button 
+      className="btn btn-secondary"
         onClick={() => {
           setPeople((current) => [{ name, lastName }, ...current]);
         }}      >
         Add user
       </button>
-      <ul>
+      <p></p>
+      </div>
+      </div>
+      <div className="row">
+        <div className="col">
+      <ul className="list-group">
         {people.map((person, idx) => (
-          <li id={idx}>{`${person.name} ${person.lastName}`}</li>
+          <li className="list-group-item" id={idx}>{`${person.name} ${person.lastName}`}</li>
         ))}
       </ul>
+        </div>
+      </div>
 
       <p className='text-blue'>Calculadora + - X</p>
       <input
@@ -109,6 +134,7 @@ function App() {
         }}>Multiplicar</button>
         
       <h1 className='text-red'>Result: {counter}</h1>
+      </div>
          
     </div>
   );
