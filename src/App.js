@@ -195,7 +195,13 @@ function App() {
                   
         </div>
       </div>
-
+      <p></p>
+      <p></p>
+      <div class="footer-basic bg-light">        
+            <p> </p>
+            <p class="copyright">Carolina Soto © 2022</p>
+            <p> </p>        
+    </div>
          
     </div>
   );
