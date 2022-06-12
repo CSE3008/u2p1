@@ -20,6 +20,10 @@
   line-height: 1.33;
   border-radius: 35px;
   }
+  .text-purple {
+    --bs-text-opacity: 1;
+    color: #a316c7;
+  }
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
