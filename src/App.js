@@ -11,15 +11,10 @@ function App() {
   const [res, setres] = useState(0);
 
   function add (){
-    var a=num1
-    var b=num2
-    console.log("This is a");
-    console.log(a);
-    console.log("This is b");
-    console.log(b);
-   result = a + b; 
+    var a=parseInt(num1)
+    var b=parseInt(num2)
+    result = a + b; 
    setCounter(result);
-  console.log(result);
   }
   function subtract (){
     var a=num1
