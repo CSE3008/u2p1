@@ -54,136 +54,148 @@ function App() {
   return (
     <div className="App">
       <div className="container-fluid">
-      <div className="row">
-        <p></p>
-        <h1 class="display-3">DWI - Tarea III - Unidad II</h1>
-        <p></p>
-        </div>
-
-      <div className="row">
-            
-        <div className="col">
-      <input
-      className="form-control"
-      placeholder="First Name"
-        type="text"
-        name="name"
-        onChange={(event) => {
-          setName(event.target.value);          
-        }}
-      />
-      </div>
-      <div className="col">
-        <input
-        className="form-control"
-        placeholder="Last Name"
-        type="text"
-        name="lastName"
-        onChange={(event) => {
-          setLastname(event.target.value);
-        }}
-      />
-      </div>
-         
-      <div className="col">
-      <button 
-      className="btn btn-secondary"
-        onClick={() => {
-          setPeople((current) => [{ name, lastName }, ...current]);
-        }}      >
-        Add user
-      </button>
-      <p></p>
-      </div>
-      </div>
-      <div className="row">
-      
-        <div className="col" >
-      <ul className="list-group">
-        {people.map((person, idx) => (
-          <li className="list-group-item" id={idx}>{`${person.name} ${person.lastName}`}</li>
-        ))}
-      </ul>
-        </div>
         
-      </div>
-      <p></p><p></p><p></p><p></p>
-      <div className="row">
-      <div className="col">
-        <p></p>
-        <h1>Calculadora</h1>
-        <p></p>
-      </div>
-      </div>
-
-      <div className="row">
-      <div className="col-2"></div>
-      <div className="col-4">
-      <input
-        className="form-control"
-        type="text"
-        name="Num1"
-        onChange={(event) => {
-          setNum1(event.target.value);
-          console.log(num1);}}
-      />
-      </div>
-      <div className="col-4">
-      <input
-        className="form-control"
-        type="text"
-        name="Num2"
-        onChange={(event) => {
-          setNum2(event.target.value);
-        }}
-      />
-      </div>
-      </div>
-      <p></p>
         <div className="row">
-        <div className="col-2"></div>
-        <div className="col-2">
-          <button 
-          className="btn btn-outline-info btn-circle"
-          onClick={()=> {
-          add();
-            }}>+</button>
+          <p></p>
+          <h1 className="display-3 text-purple">DWI - Tarea III - Unidad II</h1>
+          <p></p>
         </div>
-        <div className="col-2">
-          <button
-          className="btn btn-outline-info btn-circle" 
-          onClick={()=> {
-          subtract()
-          }}>-</button>
-        </div>
-        <div className="col-2">
-          <button 
-          className="btn btn-outline-info btn-circle"
-          onClick={()=> {
-          multiply()
-          }}>x</button>
-        </div>
-        <div className="col-2">
-          <button 
-          className="btn btn-outline-info btn-circle"
-          onClick={()=> {
-          split()
-          }}>/</button>
-      </div>
-      <div className="col-2"></div>
-        </div>
-        
-        
-        <div className="row gy-5">   
+
+        <div className="row">
           <div className="col-2"></div>
-          <div className="col-8"> 
-          <h3>
-            = 
-            <small class="text-muted"> {counter}</small>
-          </h3>
+            
+          <div className="col-3">
+            <input
+              className="form-control"
+              placeholder="First Name"
+              type="text"
+              name="name"
+              onChange={(event) => {
+                setName(event.target.value);          
+                }}
+            />
           </div>
+          <div className="col-3">
+            <input
+              className="form-control"
+              placeholder="Last Name"
+              type="text"
+              name="lastName"
+              onChange={(event) => {
+                setLastname(event.target.value);
+              }}
+            />
+          </div>
+         
+          <div className="col-2">
+            <button 
+              className="btn btn-secondary"
+              onClick={() => {
+                setPeople((current) => [{ name, lastName }, ...current]);
+              }}      >
+              Add user
+            </button>
           </div>
         </div>
+        <p></p>
+        <div className="row justify-content-md-center">      
+          <div className="col-5" >
+            <ul className="list-group">
+              {people.map((person, idx) => (
+                <li className="list-group-item" id={idx}>{`${person.name} ${person.lastName}`}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+        <div className="row"><p></p><p></p><p></p><p></p></div>
+
+        <p></p><p></p><p></p><p></p>
+      </div>
+
+      
+        
+      <div className="row">
+        <div className="col-2"></div>
+        <div className="col-sm-8">
+          <div class="card">
+            <div class="card-header">
+              <h1 className="text-info">Calculadora</h1>
+            </div>
+            <div className="card-body">
+              <div className="row">
+                <div className="col-2"></div>
+                <div className="col">
+                  <input
+                    className="form-control"
+                    type="text"
+                    name="Num1"
+                    onChange={(event) => {
+                      setNum1(event.target.value);
+                      console.log(num1);}}
+                  />
+                </div>
+                <div className="col">
+                  <input
+                    className="form-control"
+                    type="text"
+                    name="Num2"
+                    onChange={(event) => {
+                      setNum2(event.target.value);
+                    }}
+                  />
+                </div>
+                <div className="col-2"></div>
+              </div>
+                <p></p>
+              <div className="row">
+                <div className="col-4"></div>
+                <div className="col-1">
+                  <button 
+                    className="btn btn-outline-info btn-circle"
+                    onClick={()=> {
+                    add();
+                      }}>+</button>
+                </div>
+                <div className="col-1">
+                  <button
+                    className="btn btn-outline-info btn-circle" 
+                    onClick={()=> {
+                    subtract()
+                    }}>-</button>
+                </div>
+                <div className="col-1">
+                  <button 
+                    className="btn btn-outline-info btn-circle"
+                    onClick={()=> {
+                    multiply()
+                    }}>x</button>
+                </div>
+                <div className="col-1">
+                  <button 
+                    className="btn btn-outline-info btn-circle"
+                    onClick={()=> {
+                    split()
+                    }}>/</button>
+                </div>
+                <div className="col"></div>
+              </div>   
+                <p></p>  
+              <div className="row"> 
+
+                <div className="col-4"></div>
+                <div className="col border border-info rounded-pill"> 
+                  <h1>= 
+                    <small class="text-muted"> {counter}</small>
+                  </h1>
+                </div>
+                <div className="col"></div>
+              </div>
+            </div>
+            </div>
+                  
+        </div>
+      </div>
+
          
     </div>
   );
